@@ -1,0 +1,74 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+a{
+    color:white;
+    text-decoration: none;
+}
+a:hover{
+    color:white;
+    text-decoration: none;
+    cursor:pointer;
+}
+.header{
+    height:50px;
+    flex-direction: row;
+    padding-top:20px;
+    top:0px;
+    margin:0;
+    width:100%;
+    text-align: center;
+    background-color: #323232;
+    color:white;
+    font-size:20px;
+}
+.headerText{
+    margin:0;
+    padding:0;
+    font-family: SFUIText,Helvetica Neue, sans-serif;
+    float:left;
+    margin-left: 25px;
+    font-weight: 300;
+}
+.avatar{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    width: 25vh;
+    height:25vh;
+    border-radius:50%;
+}
+.avatarText{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    font-family: SFUIText,Helvetica Neue, sans-serif;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.icons{
+    margin-top: 10vh;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icon{
+    width: 25%;
+    margin-top: 20px;
+}
+.iconText{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    font-family:SFUIText,Helvetica Neue, sans-serif;
+    font-weight: 300;
+    margin-bottom: 0;
+}

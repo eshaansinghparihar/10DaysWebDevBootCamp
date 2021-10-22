@@ -35,7 +35,29 @@ function clearDisplay(){
 }
 
 function evaluateResult(){
-
+try{
+    result=eval(expression)
+    if(result===undefined || expression===undefined || result===expression)
+    {
+        document.getElementById("calculatorResult").innerHTML="Error"
+        expression=""
+        result=""
+    }
+    else
+    {
+        outputResult=expression+" = "+result
+        expression=result;
+        document.getElementById("calculatorResult").innerHTML=outputResult
+        expression=""
+        result=""
+    }
+    
+}
+catch(e){
+    document.getElementById("calculatorResult").innerHTML="Error"
+    expression=""
+    result=""
+}
 }
 openBracket.addEventListener("click", function(){
 parameterCharacter='('

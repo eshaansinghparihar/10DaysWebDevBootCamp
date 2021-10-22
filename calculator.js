@@ -137,3 +137,107 @@ add.addEventListener("click", function(){
     parameterCharacter='+'
     changeExpression(parameterCharacter)
 })
+
+document.addEventListener('keydown',function(event) {
+    var keyPressed=event.key;
+    
+    if(keyPressed==="0")
+    {
+    parameterCharacter="0"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="1")
+    {
+    parameterCharacter="1"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="2")
+    {
+    parameterCharacter="2"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="3")
+    {
+    parameterCharacter="3"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="4")
+    {
+    parameterCharacter="4"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="5")
+    {
+    parameterCharacter="5"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="6")
+    {
+    parameterCharacter="6"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="7")
+    {
+    parameterCharacter="7"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="8")
+    {
+    parameterCharacter="8"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="9")
+    {
+    parameterCharacter="9"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="(")
+    {
+    parameterCharacter="("
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed===")")
+    {
+    parameterCharacter=")"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="%")
+    {
+    parameterCharacter="/100"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="/" || keyPressed==="÷")
+    {
+    parameterCharacter="/"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="*" || keyPressed==="X")
+    {
+    parameterCharacter="*"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="-")
+    {
+    parameterCharacter="-"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="+")
+    {
+    parameterCharacter="+"
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed===".")
+    {
+    parameterCharacter="."
+    changeExpression(parameterCharacter);
+    }
+    if(keyPressed==="=" || keyPressed==="Enter")
+    {
+    evaluateResult();
+    }
+    if(keyPressed==="Backspace" || keyPressed==="Delete")
+    {
+    clearDisplay();
+    }
+                
+});

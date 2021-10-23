@@ -44,24 +44,43 @@ dictionaryResults.forEach(dictionaryElem=>{
     card.appendChild(phonetic)
     card.appendChild(origin)
 
-    let meanings=document.createElement("ul")
-    card.appendChild(meanings)
-    dictionaryElem.meanings.map(meaning=>{
-        let meaningPOS=document.createElement("ol")
-        meaningPOS.setAttribute("class","cardBody")
-        meaningPOS.setAttribute("style", `background-color:${color};color:white`)
-        meaningPOS.innerHTML="part of speech : "+meaning.partOfSpeech
-        card.appendChild(meaningPOS)
+    // let meanings=document.createElement("ul")
+    // card.appendChild(meanings)
+    // dictionaryElem.meanings.map(meaning=>{
+    //     let meaningPOS=document.createElement("ol")
+    //     meaningPOS.setAttribute("class","cardBody")
+    //     meaningPOS.setAttribute("style", `background-color:${color};color:white`)
+    //     meaningPOS.innerHTML="part of speech : "+meaning.partOfSpeech
+    //     card.appendChild(meaningPOS)
         
-        var indexMeaning=1
+    //     var indexMeaning=1
+    //     meaning.definitions.map(defination=>{
+    //         let definations=document.createElement("li")
+    //         definations.setAttribute("class","cardBody")
+    //         definations.setAttribute("style", `background-color:${color};color:white`)
+    //         definations.innerHTML=(indexMeaning++)+" . "+defination.definition
+    //         card.appendChild(definations)
+    //     })
+    // })
+
+        let meanings = document.createElement("ul");
+        card.appendChild(meanings);
+        dictionaryElem.meanings.map(meaning=>{
+        let meaningPOS=document.createElement("ol");
+        meaningPOS.setAttribute("class","cardBody");
+        meaningPOS.setAttribute("style",`background-color:${color};color:white;`);
+        meaningPOS.innerHTML="part of speech : "+meaning.partOfSpeech
+        card.appendChild(meaningPOS);
+        var indexMeaning=1;
         meaning.definitions.map(defination=>{
-            let definations=document.createElement("li")
-            definations.setAttribute("class","cardBody")
-            definations.setAttribute("style", `background-color:${color};color:white`)
-            definations.innerHTML=(indexMeaning++)+" . "+defination.definition
-            card.appendChild(definations)
+        let definations=document.createElement("li");
+        definations.setAttribute("class","cardBody");
+        definations.setAttribute("style",`background-color:${color};color:white;`);
+        definations.innerHTML=(indexMeaning++)+" . "+defination.definition;
+        card.appendChild(definations);
         })
-    })
+
+        })
 
     container.appendChild(card)
 })

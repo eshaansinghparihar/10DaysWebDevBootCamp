@@ -1,7 +1,6 @@
 var expression=""
 var result=""
 var parameterCharacter=""
-var expression=""
 var openBracket=document.getElementById("openBracket")
 var closeBracket=document.getElementById("closeBracket")
 var percentage=document.getElementById("percentage")
@@ -48,7 +47,6 @@ try{
         outputResult=expression+" = "+result
         expression=result;
         document.getElementById("calculatorResult").innerHTML=outputResult
-        expression=""
         result=""
     }
     
@@ -140,7 +138,6 @@ add.addEventListener("click", function(){
 
 document.addEventListener('keydown',function(event) {
     var keyPressed=event.key;
-    
     if(keyPressed==="0")
     {
     parameterCharacter="0"
@@ -233,7 +230,7 @@ document.addEventListener('keydown',function(event) {
     }
     if(keyPressed==="=" || keyPressed==="Enter")
     {
-    evaluateResult();
+    evaluateResult()
     }
     if(keyPressed==="Backspace" || keyPressed==="Delete")
     {

@@ -81,6 +81,24 @@ dictionaryResults.forEach(dictionaryElem=>{
         })
 
         })
+    let pronounciation=document.createElement("audio")
+    var audioFile=dictionaryElem.phonetics[0].audio
+    audioFile="https:"+audioFile
+    pronounciation.setAttribute("src",audioFile)
+    card.appendChild(pronounciation)
+
+    if(dictionaryElem.phonetics[0].audio)
+    {
+        let playButton=document.createElement("button")
+        playButton.setAttribute("class","playButton")
+        playButton.setAttribute("style",`color:${color};`);
+        playButton.innerHTML=`<i class="fas fa-volume-up"></i>`
+        card.appendChild(playButton)
+
+        playButton.addEventListener("click", function(){
+            pronounciation.play()
+        })
+    }
 
     container.appendChild(card)
 })

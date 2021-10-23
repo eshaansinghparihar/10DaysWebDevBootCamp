@@ -18,7 +18,7 @@ function search()
  .then(result=>{
      if(result.title==="No Definitions Found")
      {
-         error=result;
+         errors=result;
 
      }
      else

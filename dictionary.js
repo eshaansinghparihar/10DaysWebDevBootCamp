@@ -105,7 +105,34 @@ dictionaryResults.forEach(dictionaryElem=>{
 index=0;
 }
 function displayErrorCard(){
+    let container = document.querySelector("#cards");
+    container.innerHTML="";
+    let card;
+    card = document.createElement("div");
+    card.setAttribute("class","card");
+    color=backgroundColors[3];
+    card.setAttribute("style",`background-color:${color};color:white;`);
 
+    let title = document.createElement("p");
+    title.setAttribute("class","cardTitle");
+    title.setAttribute("style",`background-color:${color};color:white;`);
+    title.innerHTML=error.title;
+
+    let message = document.createElement("p");
+    message.setAttribute("class","cardBody");
+    message.setAttribute("style",`background-color:${color};color:white;`);
+    message.innerHTML=error.message;
+
+    let resolution = document.createElement("p");
+    resolution.setAttribute("class","cardBody");
+    resolution.setAttribute("style",`background-color:${color};color:white;`);
+    resolution.innerHTML=error.resolution;
+
+    card.appendChild(title);
+    card.appendChild(message);
+    card.appendChild(resolution);
+
+    container.appendChild(card);
 }
 
 function search()

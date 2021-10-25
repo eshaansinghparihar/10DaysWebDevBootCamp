@@ -44,43 +44,44 @@ dictionaryResults.forEach(dictionaryElem=>{
     card.appendChild(phonetic)
     card.appendChild(origin)
 
-    // let meanings=document.createElement("ul")
-    // card.appendChild(meanings)
-    // dictionaryElem.meanings.map(meaning=>{
-    //     let meaningPOS=document.createElement("ol")
-    //     meaningPOS.setAttribute("class","cardBody")
-    //     meaningPOS.setAttribute("style", `background-color:${color};color:white`)
-    //     meaningPOS.innerHTML="part of speech : "+meaning.partOfSpeech
-    //     card.appendChild(meaningPOS)
-        
-    //     var indexMeaning=1
-    //     meaning.definitions.map(defination=>{
-    //         let definations=document.createElement("li")
-    //         definations.setAttribute("class","cardBody")
-    //         definations.setAttribute("style", `background-color:${color};color:white`)
-    //         definations.innerHTML=(indexMeaning++)+" . "+defination.definition
-    //         card.appendChild(definations)
-    //     })
-    // })
-
-        let meanings = document.createElement("ul");
-        card.appendChild(meanings);
-        dictionaryElem.meanings.map(meaning=>{
-        let meaningPOS=document.createElement("ol");
-        meaningPOS.setAttribute("class","cardBody");
-        meaningPOS.setAttribute("style",`background-color:${color};color:white;`);
+    let meanings=document.createElement("ul")
+    card.appendChild(meanings)
+    dictionaryElem.meanings.map(meaning=>{
+        let meaningPOS=document.createElement("ol")
+        meaningPOS.setAttribute("class","cardBody")
+        meaningPOS.setAttribute("style", `background-color:${color};color:white`)
         meaningPOS.innerHTML="part of speech : "+meaning.partOfSpeech
-        card.appendChild(meaningPOS);
-        var indexMeaning=1;
+        card.appendChild(meaningPOS)
+        
+        var indexMeaning=1
         meaning.definitions.map(defination=>{
-        let definations=document.createElement("li");
-        definations.setAttribute("class","cardBody");
-        definations.setAttribute("style",`background-color:${color};color:white;`);
-        definations.innerHTML=(indexMeaning++)+" . "+defination.definition;
-        card.appendChild(definations);
+            let definations=document.createElement("li")
+            definations.setAttribute("class","cardBody")
+            definations.setAttribute("style", `background-color:${color};color:white`)
+            definations.innerHTML=(indexMeaning++)+" . "+defination.definition
+            card.appendChild(definations)
         })
+    })
 
-        })
+        // let meanings = document.createElement("ul");
+        // card.appendChild(meanings);
+        // dictionaryElem.meanings.map(meaning=>{
+        // let meaningPOS=document.createElement("ol");
+        // meaningPOS.setAttribute("class","cardBody");
+        // meaningPOS.setAttribute("style",`background-color:${color};color:white;`);
+        // meaningPOS.innerHTML="part of speech : "+meaning.partOfSpeech
+        // card.appendChild(meaningPOS);
+
+        // var indexMeaning=1;
+        // meaning.definitions.map(defination=>{
+        // let definations=document.createElement("li");
+        // definations.setAttribute("class","cardBody");
+        // definations.setAttribute("style",`background-color:${color};color:white;`);
+        // definations.innerHTML=(indexMeaning++)+" . "+defination.definition;
+        // card.appendChild(definations);
+        // })
+
+        // })
     let pronounciation=document.createElement("audio")
     var audioFile=dictionaryElem.phonetics[0].audio
     audioFile="https:"+audioFile
@@ -110,23 +111,23 @@ function displayErrorCard(){
     let card;
     card = document.createElement("div");
     card.setAttribute("class","card");
-    color=backgroundColors[3];
+    color=backgroundColor[3];
     card.setAttribute("style",`background-color:${color};color:white;`);
 
     let title = document.createElement("p");
     title.setAttribute("class","cardTitle");
     title.setAttribute("style",`background-color:${color};color:white;`);
-    title.innerHTML=error.title;
+    title.innerHTML=errors.title;
 
     let message = document.createElement("p");
     message.setAttribute("class","cardBody");
     message.setAttribute("style",`background-color:${color};color:white;`);
-    message.innerHTML=error.message;
+    message.innerHTML=errors.message;
 
     let resolution = document.createElement("p");
     resolution.setAttribute("class","cardBody");
     resolution.setAttribute("style",`background-color:${color};color:white;`);
-    resolution.innerHTML=error.resolution;
+    resolution.innerHTML=errors.resolution;
 
     card.appendChild(title);
     card.appendChild(message);

@@ -48,6 +48,7 @@ if(noteTitle!="" && noteBody!="")
 
     deleteButton.addEventListener("click", function(){
         var id=this.id;
+        console.log(id)
         container.removeChild(card)
         if(notes.length>1)
         notes.splice(id,1)

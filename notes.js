@@ -33,11 +33,27 @@ if(noteTitle!="" && noteBody!="")
     cardBody.setAttribute("style", `background-color:${color};color:white;`)
     cardBody.value=note.body
 
+    let deleteButton=document.createElement("button")
+    deleteButton.setAttribute("class","deleteNote")
+    deleteButton.setAttribute("style", `color:${color};`)
+    deleteButton.setAttribute("id", `${note.id}`)
+    deleteButton.innerHTML=`<i class="fa fa-trash-o " aria-hidden="true"></i>`
+
     let container=document.getElementById("cards")
     container.appendChild(card)
 
     card.appendChild(title)
     card.appendChild(cardBody)
+    card.appendChild(deleteButton)
+
+    deleteButton.addEventListener("click", function(){
+        var id=this.id;
+        container.removeChild(card)
+        if(notes.length>1)
+        notes.splice(id,1)
+        else
+        notes.pop()
+    })
 
 }
 }

@@ -1,0 +1,31 @@
+{
+    "name": "Prolificity",
+    "short_name": "Prolificity",
+    "background_color": "#fdfdfd",
+    "theme_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/assets/favicon_package_v0.16/android-chrome-192x192.png",
+        "type": "image/png", "sizes": "192x192"
+      },
+      {
+        "src": "/assets/favicon_package_v0.16/favicon-16x16.png",
+        "type": "image/png", "sizes": "16x16"
+      },
+      {
+        "src": "/assets/favicon_package_v0.16/favicon-32x32.png",
+        "type": "image/png", "sizes": "32x32"
+      },
+      {
+        "src": "/assets/favicon_package_v0.16/android-chrome-512x512.png",
+        "type": "image/png", "sizes": "512x512"
+      },
+      {
+        "src": "/assets/favicon_package_v0.16/android-chrome-512x512.png",
+        "type": "image/png", "sizes": "512x512" , "purpose":"any maskable"
+      }
+    ],
+    "start_url": ".",
+    "display":"fullscreen"
+  }

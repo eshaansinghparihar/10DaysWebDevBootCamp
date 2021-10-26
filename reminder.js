@@ -11,6 +11,36 @@ function convertNowToTimeDateLocal(){
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
     return now.toISOString().slice(0,16)
 }
+
+window.addEventListener('load',()=>{
+    document.getElementById("reminderTime").value=convertNowToTimeDateLocal()
+    setInterval(function(){
+        notify()},30000)
+})
+
+function notify(){
+    reminders.forEach(reminder=>{
+        if(reminder.time===convertNowToTimeDateLocal())
+        {
+            if(Notification.permission==="granted")
+            {
+            showNotification(reminder)
+            sound.play();
+            }
+            else if(Notification.permission==="denied" || Notification.permission==="default")
+            {
+                Notification.requestPermission().then(function(permission){
+                    if(permission==="granted")
+                    {
+                        showNotification(reminder)
+                        sound.play()
+                    }
+                })
+            }
+        }
+    })
+}
+
 function displayReminder(){
  let card;
  reminder=reminders[reminders.length-1]
@@ -69,3 +99,15 @@ function addReminder(){
 addReminderButton.addEventListener("click" , function(){
     addReminder()
 })
+function showNotification(reminder){
+    let notif=new Notification(`${reminder.title}`,{
+        icon:"/assets/logo.png"
+    })
+
+    notif.onclick=(e)=>{
+        if(reminder.meetingLink!=="")
+        {
+            window.open(`${reminder.meetingLink}`)
+        }
+    }
+}
